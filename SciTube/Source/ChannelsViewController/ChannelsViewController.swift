@@ -9,14 +9,45 @@
 import UIKit
 
 class ChannelsViewController: UIViewController {
-
     enum Constants {
         static let title = "SciTube"
     }
     
+    @IBOutlet var tableView: UITableView!
+    var channels = [Channel]() {
+        didSet {
+            self.updateTableView()
+        }
+    }
+    
+    var dataSource: TableDataSource<ChannelCell, Channel>!
+    
+    //MARK:- View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constants.title
-        Channel.channelsFromAPI(with: nil)
+        setupTableView()
+        Channel.channelsFromAPI(with: {[weak self] channels in
+            self?.channels = channels
+            self?.updateTableView()
+        })
+    }
+    
+    //MARK:- Private
+    
+    private func setupTableView() {
+        tableView?.register(ChannelCell.nib, forCellReuseIdentifier: ChannelCell.nibName)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 50
+    }
+    
+    private func updateTableView() {
+        self.dataSource = TableDataSource(cellIdentifier: ChannelCell.nibName, items: channels, configureCell: { (cell, channel) in
+            cell.model = channel
+        })
+        
+        tableView.dataSource = self.dataSource
+        tableView.reloadData()
     }
 }

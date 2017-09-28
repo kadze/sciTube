@@ -34,7 +34,7 @@ extension Channel {
             case .success(let response):
                 do {
                     let json = try response.mapJSON()
-                    
+
                     var channels = [Channel]()
                     if let dictionaries = json as? [String : AnyObject] {
                         if let channelsInfo = dictionaries["items"] as? [[String : Any]] {
@@ -48,11 +48,11 @@ extension Channel {
                                 let thumbnailURL = URL(string: thumbnailURLString) else {
                                     continue
                                 }
-                                
+
                                 channels.append(Channel(title: title, description: description, url: thumbnailURL))
                             }
                         }
-                        
+
                         completion?(channels)
                     }
                 } catch {
@@ -63,12 +63,13 @@ extension Channel {
             }
         }
     }
-    
+
     private static func handle(error: Error!) {
-        
+
     }
-    
+
     private static func handle(errorText: String) {
-        
+
     }
 }
+
