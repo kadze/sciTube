@@ -13,15 +13,14 @@ class Channel: NSObject {
     let title: String
     let channelDescription: String
     let url: URL
-    let thumbnail: UIImage
+    var thumbnail: UIImage?
     
     //MARK: - Initialization
     
-    init(title: String, description: String, url: URL, thumbnail: UIImage) {
+    init(title: String, description: String, url: URL) {
         self.title = title
         channelDescription = description
         self.url = url
-        self.thumbnail = thumbnail
         super.init()
     }
 }
@@ -34,8 +33,37 @@ extension Channel {
             switch result {
             case .success(let response):
                 do {
-//                    let channels: [Channel] = try response.mapJSON() as! [Channel]
-                    completion?(channels)
+                    let json = try response.mapJSON()
+                    
+                    var channels = [Channel]()
+                    if let dictionaries = json as? [String : AnyObject] {
+                        if let channelsInfo = dictionaries["items"] as? [[String : Any]] {
+                            for channelInfo in channelsInfo {
+                                guard let snippetInfo = channelInfo["snippet"] as? [String : Any] else {
+                                    continue
+                                }
+                                
+                                guard let title = snippetInfo["title"] as? String else {
+                                    continue
+                                }
+                                
+                                guard let description = snippetInfo["description"] as? String else {
+                                    continue
+                                }
+                                
+                                guard let thumbnails = snippetInfo["thumbnails"] as? [String : Any],
+                                let thumbnailInfo = thumbnails["default"] as? [String : Any],
+                                let thumbnailURLString = thumbnailInfo["url"] as? String,
+                                let thumbnailURL = URL(string: thumbnailURLString) else {
+                                    continue
+                                }
+                                
+                                channels.append(Channel(title: title, description: description, url: thumbnailURL))
+                            }
+                        }
+                        
+                        completion?(channels)
+                    }
                 } catch {
                     handle(errorText: "Failed to parce response")
                 }
