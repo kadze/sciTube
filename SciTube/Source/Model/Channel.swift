@@ -39,19 +39,10 @@ extension Channel {
                     if let dictionaries = json as? [String : AnyObject] {
                         if let channelsInfo = dictionaries["items"] as? [[String : Any]] {
                             for channelInfo in channelsInfo {
-                                guard let snippetInfo = channelInfo["snippet"] as? [String : Any] else {
-                                    continue
-                                }
-                                
-                                guard let title = snippetInfo["title"] as? String else {
-                                    continue
-                                }
-                                
-                                guard let description = snippetInfo["description"] as? String else {
-                                    continue
-                                }
-                                
-                                guard let thumbnails = snippetInfo["thumbnails"] as? [String : Any],
+                                guard let snippetInfo = channelInfo["snippet"] as? [String : Any],
+                                let title = snippetInfo["title"] as? String,
+                                let description = snippetInfo["description"] as? String,
+                                let thumbnails = snippetInfo["thumbnails"] as? [String : Any],
                                 let thumbnailInfo = thumbnails["default"] as? [String : Any],
                                 let thumbnailURLString = thumbnailInfo["url"] as? String,
                                 let thumbnailURL = URL(string: thumbnailURLString) else {
