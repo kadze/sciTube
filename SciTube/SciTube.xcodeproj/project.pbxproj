@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5E8B86CE1F7D5B6D007C3C7F /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B86CD1F7D5B6D007C3C7F /* Channel.swift */; };
+		5E8B86D11F7D5D0C007C3C7F /* NorbsoftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B86D01F7D5D0C007C3C7F /* NorbsoftAPI.swift */; };
+		5E8B86D21F7D5D82007C3C7F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C3D1F7D557800855140 /* Alamofire.framework */; };
+		5E8B86D31F7D5D82007C3C7F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C3D1F7D557800855140 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E8B86D71F7D5DA6007C3C7F /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C591F7D559C00855140 /* Result.framework */; };
+		5E8B86D81F7D5DA6007C3C7F /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C591F7D559C00855140 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E8B86DB1F7D5DBC007C3C7F /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C6A1F7D55BA00855140 /* Moya.framework */; };
+		5E8B86DC1F7D5DBC007C3C7F /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C6A1F7D55BA00855140 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EA65C131F7D4F4500855140 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA65C121F7D4F4500855140 /* AppDelegate.swift */; };
 		5EA65C1B1F7D4F4500855140 /* SciTube.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EA65C191F7D4F4500855140 /* SciTube.xcdatamodeld */; };
 		5EA65C1D1F7D4F4500855140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EA65C1C1F7D4F4500855140 /* Assets.xcassets */; };
@@ -17,6 +24,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5E8B86D41F7D5D82007C3C7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EA65C311F7D557800855140 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		5E8B86D91F7D5DA6007C3C7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EA65C4A1F7D559C00855140 /* Result.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D454807C1A957361009D7229;
+			remoteInfo = "Result-iOS";
+		};
+		5E8B86DD1F7D5DBC007C3C7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EA65C621F7D55BA00855140 /* Moya.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = ED6C081A4AC105D3F62F3C49;
+			remoteInfo = Moya;
+		};
 		5EA65C3C1F7D557800855140 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5EA65C311F7D557800855140 /* Alamofire.xcodeproj */;
@@ -145,8 +173,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5E8B86D61F7D5D82007C3C7F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5E8B86D31F7D5D82007C3C7F /* Alamofire.framework in Embed Frameworks */,
+				5E8B86DC1F7D5DBC007C3C7F /* Moya.framework in Embed Frameworks */,
+				5E8B86D81F7D5DA6007C3C7F /* Result.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5E8B86CD1F7D5B6D007C3C7F /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		5E8B86D01F7D5D0C007C3C7F /* NorbsoftAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorbsoftAPI.swift; sourceTree = "<group>"; };
 		5EA65C0F1F7D4F4500855140 /* SciTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SciTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA65C121F7D4F4500855140 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EA65C1A1F7D4F4500855140 /* SciTube.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SciTube.xcdatamodel; sourceTree = "<group>"; };
@@ -165,6 +210,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E8B86D21F7D5D82007C3C7F /* Alamofire.framework in Frameworks */,
+				5E8B86DB1F7D5DBC007C3C7F /* Moya.framework in Frameworks */,
+				5E8B86D71F7D5DA6007C3C7F /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +222,7 @@
 		5E8B86CF1F7D5CA3007C3C7F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				5E8B86D01F7D5D0C007C3C7F /* NorbsoftAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -302,10 +351,14 @@
 				5EA65C0B1F7D4F4500855140 /* Sources */,
 				5EA65C0C1F7D4F4500855140 /* Frameworks */,
 				5EA65C0D1F7D4F4500855140 /* Resources */,
+				5E8B86D61F7D5D82007C3C7F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5E8B86D51F7D5D82007C3C7F /* PBXTargetDependency */,
+				5E8B86DA1F7D5DA6007C3C7F /* PBXTargetDependency */,
+				5E8B86DE1F7D5DBC007C3C7F /* PBXTargetDependency */,
 			);
 			name = SciTube;
 			productName = SciTube;
@@ -511,10 +564,29 @@
 				5E8B86CE1F7D5B6D007C3C7F /* Channel.swift in Sources */,
 				5EA65C131F7D4F4500855140 /* AppDelegate.swift in Sources */,
 				5EA65C1B1F7D4F4500855140 /* SciTube.xcdatamodeld in Sources */,
+				5E8B86D11F7D5D0C007C3C7F /* NorbsoftAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E8B86D51F7D5D82007C3C7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 5E8B86D41F7D5D82007C3C7F /* PBXContainerItemProxy */;
+		};
+		5E8B86DA1F7D5DA6007C3C7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Result-iOS";
+			targetProxy = 5E8B86D91F7D5DA6007C3C7F /* PBXContainerItemProxy */;
+		};
+		5E8B86DE1F7D5DBC007C3C7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Moya;
+			targetProxy = 5E8B86DD1F7D5DBC007C3C7F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5EA65C1E1F7D4F4500855140 /* LaunchScreen.storyboard */ = {
@@ -638,6 +710,7 @@
 		5EA65C251F7D4F4500855140 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82RN25AVX5;
@@ -653,6 +726,7 @@
 		5EA65C261F7D4F4500855140 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82RN25AVX5;

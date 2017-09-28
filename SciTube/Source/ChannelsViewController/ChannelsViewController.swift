@@ -17,6 +17,6 @@ class ChannelsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constants.title
-        // Do any additional setup after loading the view.
+        Channel.channelsFromAPI(with: nil)
     }
 }

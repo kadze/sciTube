@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 class Channel: NSObject {
     let title: String
@@ -14,7 +15,7 @@ class Channel: NSObject {
     let url: URL
     let thumbnail: UIImage
     
-    //MARK: Initialization
+    //MARK: - Initialization
     
     init(title: String, description: String, url: URL, thumbnail: UIImage) {
         self.title = title
@@ -23,5 +24,32 @@ class Channel: NSObject {
         self.thumbnail = thumbnail
         super.init()
     }
+}
+
+//MARK: - Network
+extension Channel {
+   static func channelsFromAPI(with completion:(([Channel]) -> ())?) {
+        let provider = MoyaProvider<NorbsoftAPI>()
+        provider.request(.channels) { (result) in
+            switch result {
+            case .success(let response):
+                do {
+//                    let channels: [Channel] = try response.mapJSON() as! [Channel]
+                    completion?(channels)
+                } catch {
+                    handle(errorText: "Failed to parce response")
+                }
+            case .failure(let error):
+                handle(error: error)
+            }
+        }
+    }
     
+    private static func handle(error: Error!) {
+        
+    }
+    
+    private static func handle(errorText: String) {
+        
+    }
 }
