@@ -9,11 +9,15 @@
 import UIKit
 import Moya
 
-class Channel: NSObject {
+class Channel: Decodable {
     let title: String
     let channelDescription: String
     let url: URL
     var thumbnail: UIImage?
+    
+    private enum Constants {
+        static let itemsKey = "items"
+    }
     
     //MARK: - Initialization
     
@@ -21,7 +25,35 @@ class Channel: NSObject {
         self.title = title
         channelDescription = description
         self.url = url
-        super.init()
+    }
+    
+    //MARK: - Decodable
+    required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let snippet = try values.nestedContainer(keyedBy: SnippetKeys.self, forKey: .snippet)
+        title = try snippet.decode(String.self, forKey: .title)
+        channelDescription = try snippet.decode(String.self, forKey: .channelDescription)
+        let thumbnails = try snippet.nestedContainer(keyedBy: ThumbnailsKeys.self, forKey: .thumbnails)
+        let defaults = try thumbnails.nestedContainer(keyedBy: DefaultKeys.self, forKey: .defaultKey)
+        url = try defaults.decode(URL.self, forKey: .url)
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case snippet
+    }
+
+    enum SnippetKeys: String, CodingKey {
+        case title
+        case channelDescription = "description"
+        case thumbnails
+    }
+
+    enum ThumbnailsKeys: String, CodingKey {
+        case defaultKey = "default"
+    }
+
+    enum DefaultKeys: String, CodingKey {
+        case url
     }
 }
 
@@ -34,29 +66,23 @@ extension Channel {
             case .success(let response):
                 do {
                     let json = try response.mapJSON()
-
-                    var channels = [Channel]()
-                    if let dictionaries = json as? [String : AnyObject] {
-                        if let channelsInfo = dictionaries["items"] as? [[String : Any]] {
-                            for channelInfo in channelsInfo {
-                                guard let snippetInfo = channelInfo["snippet"] as? [String : Any],
-                                let title = snippetInfo["title"] as? String,
-                                let description = snippetInfo["description"] as? String,
-                                let thumbnails = snippetInfo["thumbnails"] as? [String : Any],
-                                let thumbnailInfo = thumbnails["default"] as? [String : Any],
-                                let thumbnailURLString = thumbnailInfo["url"] as? String,
-                                let thumbnailURL = URL(string: thumbnailURLString) else {
-                                    continue
-                                }
-
-                                channels.append(Channel(title: title, description: description, url: thumbnailURL))
+                    var itemsData: Data = Data()
+                    if let rootDictionary = json as? [String : AnyObject] {
+                        if let itemDictionaries = rootDictionary[Constants.itemsKey] as? [[String : Any]] {
+                            do {
+                                let newData = try JSONSerialization.data(withJSONObject: itemDictionaries, options: .prettyPrinted)
+                                itemsData = newData
+                            } catch let myJSONError {
+                                print(myJSONError)
                             }
                         }
-
-                        completion?(channels)
                     }
-                } catch {
+
+                    let channels = try JSONDecoder().decode([Channel].self, from: itemsData)
+                    completion?(channels)
+                } catch (let error){
                     handle(errorText: "Failed to parce response")
+                    print(error.localizedDescription)
                 }
             case .failure(let error):
                 handle(error: error)

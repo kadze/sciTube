@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E8ACCE01F987D0800294A41 /* ExampleJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8ACCDF1F987D0800294A41 /* ExampleJSON.swift */; };
 		5E8B86CE1F7D5B6D007C3C7F /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B86CD1F7D5B6D007C3C7F /* Channel.swift */; };
 		5E8B86D11F7D5D0C007C3C7F /* NorbsoftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B86D01F7D5D0C007C3C7F /* NorbsoftAPI.swift */; };
-		5E8B86D21F7D5D82007C3C7F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C3D1F7D557800855140 /* Alamofire.framework */; };
-		5E8B86D31F7D5D82007C3C7F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C3D1F7D557800855140 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E8B86D71F7D5DA6007C3C7F /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C591F7D559C00855140 /* Result.framework */; };
 		5E8B86D81F7D5DA6007C3C7F /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C591F7D559C00855140 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EA65C131F7D4F4500855140 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA65C121F7D4F4500855140 /* AppDelegate.swift */; };
@@ -23,18 +22,9 @@
 		5EBAB4521F7D765200061D2C /* ChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBAB4501F7D765200061D2C /* ChannelCell.xib */; };
 		5ED3F1E21F7D7AF5009BFF00 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAB4551F7D77B100061D2C /* TableDataSource.swift */; };
 		5ED3F1E81F7D7CE2009BFF00 /* EasyAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3F1E71F7D7CE2009BFF00 /* EasyAccess.swift */; };
-		5ED3F1E91F7D7EF3009BFF00 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C6A1F7D55BA00855140 /* Moya.framework */; };
-		5ED3F1EA1F7D7EF3009BFF00 /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA65C6A1F7D55BA00855140 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5E8B86D41F7D5D82007C3C7F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EA65C311F7D557800855140 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
 		5E8B86D91F7D5DA6007C3C7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5EA65C4A1F7D559C00855140 /* Result.xcodeproj */;
@@ -168,13 +158,6 @@
 			remoteGlobalIDString = 5365911118011A3A4FE0CD07;
 			remoteInfo = MoyaTests;
 		};
-		5ED3F1EB1F7D7EF3009BFF00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EA65C621F7D55BA00855140 /* Moya.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ED6C081A4AC105D3F62F3C49;
-			remoteInfo = Moya;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -184,8 +167,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5E8B86D31F7D5D82007C3C7F /* Alamofire.framework in Embed Frameworks */,
-				5ED3F1EA1F7D7EF3009BFF00 /* Moya.framework in Embed Frameworks */,
 				5E8B86D81F7D5DA6007C3C7F /* Result.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -194,6 +175,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E8ACCDF1F987D0800294A41 /* ExampleJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleJSON.swift; sourceTree = "<group>"; };
 		5E8B86CD1F7D5B6D007C3C7F /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		5E8B86D01F7D5D0C007C3C7F /* NorbsoftAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorbsoftAPI.swift; sourceTree = "<group>"; };
 		5EA65C0F1F7D4F4500855140 /* SciTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SciTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,8 +200,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E8B86D21F7D5D82007C3C7F /* Alamofire.framework in Frameworks */,
-				5ED3F1E91F7D7EF3009BFF00 /* Moya.framework in Frameworks */,
 				5E8B86D71F7D5DA6007C3C7F /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				5EA65C1C1F7D4F4500855140 /* Assets.xcassets */,
+				5E8ACCDF1F987D0800294A41 /* ExampleJSON.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -384,9 +365,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5E8B86D51F7D5D82007C3C7F /* PBXTargetDependency */,
 				5E8B86DA1F7D5DA6007C3C7F /* PBXTargetDependency */,
-				5ED3F1EC1F7D7EF3009BFF00 /* PBXTargetDependency */,
 			);
 			name = SciTube;
 			productName = SciTube;
@@ -595,6 +574,7 @@
 				5E8B86CE1F7D5B6D007C3C7F /* Channel.swift in Sources */,
 				5EA65C131F7D4F4500855140 /* AppDelegate.swift in Sources */,
 				5EA65C1B1F7D4F4500855140 /* SciTube.xcdatamodeld in Sources */,
+				5E8ACCE01F987D0800294A41 /* ExampleJSON.swift in Sources */,
 				5E8B86D11F7D5D0C007C3C7F /* NorbsoftAPI.swift in Sources */,
 				5ED3F1E81F7D7CE2009BFF00 /* EasyAccess.swift in Sources */,
 			);
@@ -603,20 +583,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5E8B86D51F7D5D82007C3C7F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire iOS";
-			targetProxy = 5E8B86D41F7D5D82007C3C7F /* PBXContainerItemProxy */;
-		};
 		5E8B86DA1F7D5DA6007C3C7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Result-iOS";
 			targetProxy = 5E8B86D91F7D5DA6007C3C7F /* PBXContainerItemProxy */;
-		};
-		5ED3F1EC1F7D7EF3009BFF00 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Moya;
-			targetProxy = 5ED3F1EB1F7D7EF3009BFF00 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
