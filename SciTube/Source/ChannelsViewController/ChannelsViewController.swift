@@ -31,6 +31,11 @@ class ChannelsViewController: UIViewController {
         Channel.channelsFromAPI(with: {[weak self] channels in
             self?.channels = channels
             self?.updateTableView()
+            CoreDataFetcher.sharedInstance.saveChannelsToDatabase(channels, completion: { (result, error) in
+                let alert = UIAlertController(title: "SciTube", message: "Saved", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self?.present(alert, animated: true, completion: nil)
+            })
         })
     }
     
