@@ -28,14 +28,20 @@ class ChannelsViewController: UIViewController {
         super.viewDidLoad()
         title = Constants.title
         setupTableView()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(ChannelsViewController.onSaveButton(_:)))
         Channel.channelsFromAPI(with: {[weak self] channels in
             self?.channels = channels
             self?.updateTableView()
-            CoreDataFetcher.sharedInstance.saveChannelsToDatabase(channels, completion: { (result, error) in
-                let alert = UIAlertController(title: "SciTube", message: "Saved", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self?.present(alert, animated: true, completion: nil)
-            })
+        })
+    }
+    
+    //MARK: - Actions
+    
+    @objc func onSaveButton(_ sender: UIBarButtonItem) {
+        CoreDataFetcher.sharedInstance.saveChannelsToDatabase(channels, completion: { (result, error) in
+            let alert = UIAlertController(title: "SciTube", message: "Saved", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         })
     }
     
