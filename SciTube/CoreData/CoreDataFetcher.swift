@@ -52,6 +52,24 @@ class CoreDataFetcher {
             completion(true, nil)
         }
     }
+    
+    func readAllChannelsFromDatabase() -> [Channel]? {
+        do {
+            let channels = try CoreDataManager.sharedInstance.managedObjectContext.fetch(CDChannel.fetchRequest()) as! [CDChannel]
+            var result = [Channel]()
+            for channel in channels {
+                result.append(Channel(title: channel.title ?? "",
+                                      description: channel.channelDescription ?? "",
+                                      url: URL(string:channel.url ?? "") ?? URL(string:"")!))
+            }
+            
+            return result;
+        } catch {
+            fatalError("Failed to fetch employees: \(error)")
+        }
+        
+        return nil;
+    }
 
     // clear completed tasks archive
 //    func clearCompletedTasks(tasks: [Task], complition: @escaping (_ sucsess: Bool) -> Void) {

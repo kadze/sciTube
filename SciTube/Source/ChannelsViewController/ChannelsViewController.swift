@@ -29,6 +29,7 @@ class ChannelsViewController: UIViewController {
         title = Constants.title
         setupTableView()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(ChannelsViewController.onSaveButton(_:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "read from db", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ChannelsViewController.onReadFromDBButton(_:)))
         Channel.channelsFromAPI(with: {[weak self] channels in
             self?.channels = channels
             self?.updateTableView()
@@ -43,6 +44,12 @@ class ChannelsViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         })
+    }
+    
+    @objc func onReadFromDBButton(_ sender: UIBarButtonItem) {
+        if let channels = CoreDataFetcher.sharedInstance.readAllChannelsFromDatabase() {
+            self.channels = channels
+        }
     }
     
     //MARK:- Private
