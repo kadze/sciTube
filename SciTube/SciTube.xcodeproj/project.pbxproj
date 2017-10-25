@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E7DF8621FA0DAF8008293CF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DF8611FA0DAF8008293CF /* CoreDataManager.swift */; };
+		5E7DF8641FA0DBDD008293CF /* CoreDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DF8631FA0DBDD008293CF /* CoreDataFetcher.swift */; };
+		5E7DF8671FA0DE69008293CF /* CDChannel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DF8651FA0DE69008293CF /* CDChannel+CoreDataClass.swift */; };
+		5E7DF8681FA0DE69008293CF /* CDChannel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DF8661FA0DE69008293CF /* CDChannel+CoreDataProperties.swift */; };
 		5E8ACCE01F987D0800294A41 /* ExampleJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8ACCDF1F987D0800294A41 /* ExampleJSON.swift */; };
 		5E8B86CE1F7D5B6D007C3C7F /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B86CD1F7D5B6D007C3C7F /* Channel.swift */; };
 		5E8B86D11F7D5D0C007C3C7F /* NorbsoftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B86D01F7D5D0C007C3C7F /* NorbsoftAPI.swift */; };
@@ -175,6 +179,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E7DF8611FA0DAF8008293CF /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		5E7DF8631FA0DBDD008293CF /* CoreDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataFetcher.swift; sourceTree = "<group>"; };
+		5E7DF8651FA0DE69008293CF /* CDChannel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDChannel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5E7DF8661FA0DE69008293CF /* CDChannel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDChannel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5E8ACCDF1F987D0800294A41 /* ExampleJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleJSON.swift; sourceTree = "<group>"; };
 		5E8B86CD1F7D5B6D007C3C7F /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		5E8B86D01F7D5D0C007C3C7F /* NorbsoftAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorbsoftAPI.swift; sourceTree = "<group>"; };
@@ -270,7 +278,11 @@
 		5EA65C291F7D4FEE00855140 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				5E7DF8631FA0DBDD008293CF /* CoreDataFetcher.swift */,
+				5E7DF8611FA0DAF8008293CF /* CoreDataManager.swift */,
 				5EA65C191F7D4F4500855140 /* SciTube.xcdatamodeld */,
+				5E7DF8651FA0DE69008293CF /* CDChannel+CoreDataClass.swift */,
+				5E7DF8661FA0DE69008293CF /* CDChannel+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -572,10 +584,14 @@
 				5EA65C2D1F7D50DB00855140 /* ChannelsViewController.swift in Sources */,
 				5EBAB4511F7D765200061D2C /* ChannelCell.swift in Sources */,
 				5E8B86CE1F7D5B6D007C3C7F /* Channel.swift in Sources */,
+				5E7DF8671FA0DE69008293CF /* CDChannel+CoreDataClass.swift in Sources */,
 				5EA65C131F7D4F4500855140 /* AppDelegate.swift in Sources */,
 				5EA65C1B1F7D4F4500855140 /* SciTube.xcdatamodeld in Sources */,
+				5E7DF8641FA0DBDD008293CF /* CoreDataFetcher.swift in Sources */,
 				5E8ACCE01F987D0800294A41 /* ExampleJSON.swift in Sources */,
 				5E8B86D11F7D5D0C007C3C7F /* NorbsoftAPI.swift in Sources */,
+				5E7DF8681FA0DE69008293CF /* CDChannel+CoreDataProperties.swift in Sources */,
+				5E7DF8621FA0DAF8008293CF /* CoreDataManager.swift in Sources */,
 				5ED3F1E81F7D7CE2009BFF00 /* EasyAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
