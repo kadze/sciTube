@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JSQCoreDataKit  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="JSQCoreDataKit  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">JSQCoreDataKit Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/jessesquires/JSQCoreDataKit"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">JSQCoreDataKit Reference</a>
+        <img id="carat" src="img/carat.png" />
+        JSQCoreDataKit  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="getting-started.html">Getting Started</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/CoreDataStack.html">CoreDataStack</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:14JSQCoreDataKit19defaultStoreOptionss10DictionaryVySo8NSObjectCyXlGv">defaultStoreOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/MigrationError.html">MigrationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ModelFileExtension.html">ModelFileExtension</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/SaveResult.html">SaveResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/StackResult.html">StackResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/StoreType.html">StoreType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:14JSQCoreDataKit19defaultDirectoryURL10Foundation0F0VyF">defaultDirectoryURL()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:14JSQCoreDataKit11saveContextySo015NSManagedObjectE0C_Sb4waityAA10SaveResultOcSg10completiontF">saveContext(_:wait:completion:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/CoreDataEntityProtocol.html">CoreDataEntityProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/CoreDataModel.html">CoreDataModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/CoreDataStackFactory.html">CoreDataStackFactory</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:14JSQCoreDataKit12ChildContexta">ChildContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:14JSQCoreDataKit22PersistentStoreOptionsa">PersistentStoreOptions</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='jsqcoredatakit' class='heading'>JSQCoreDataKit</h1>
+
+<p><a href="http://travis-ci.org/jessesquires/JSQCoreDataKit"><img src="https://secure.travis-ci.org/jessesquires/JSQCoreDataKit.svg" alt="Build Status"></a> <a href="https://cocoapods.org/pods/JSQCoreDataKit"><img src="https://img.shields.io/cocoapods/v/JSQCoreDataKit.svg" alt="Version Status"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/cocoapods/l/JSQCoreDataKit.svg" alt="license MIT"></a> <a href="https://codecov.io/gh/jessesquires/JSQCoreDataKit"><img src="https://codecov.io/gh/jessesquires/JSQCoreDataKit/branch/develop/graph/badge.svg" alt="codecov"></a> <a href="https://jessesquires.github.io/JSQCoreDataKit"><img src="https://img.shields.io/cocoapods/p/JSQCoreDataKit.svg" alt="Platform"></a> <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a></p>
+
+<p><em>A swifter Core Data stack</em></p>
+<h2 id='about' class='heading'>About</h2>
+
+<p>This library aims to do the following:</p>
+
+<ul>
+<li>Provide better interoperability with Swift</li>
+<li>Harness Swift features and enforce Swift paradigms</li>
+<li>Bring functional paradigms to Core Data</li>
+<li>Make Core Data more <em>Swifty</em></li>
+<li>Simplify the processes of standing up the Core Data stack</li>
+<li>Aid in testing your Core Data models</li>
+<li>Reduce the boilerplate involved with Core Data</li>
+</ul>
+
+<blockquote>
+<p><strong>Further reading on Core Data:</strong></p>
+
+<ul>
+<li><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html">Core Data Programming Guide</a></li>
+<li><a href="https://developer.apple.com/library/ios/documentation/DataManagement/Devpedia-CoreData/coreDataStack.html#//apple_ref/doc/uid/TP40010398-CH25-SW1">Core Data Core Competencies Guide</a></li>
+<li><a href="https://www.objc.io/issue-4/">objc.io issue #4 on Core Data</a></li>
+<li><a href="http://floriankugler.com/2013/04/29/concurrent-core-data-stack-performance-shootout/">Concurrent Core Data Stacks – Performance Shootout</a></li>
+<li><a href="http://floriankugler.com/2013/05/13/backstage-with-nested-managed-object-contexts/">Backstage with Nested Managed Object Contexts</a></li>
+</ul>
+</blockquote>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<ul>
+<li>Xcode 9+</li>
+<li>Swift 4.0+</li>
+<li>iOS 9.0+</li>
+<li>OSX 10.10+</li>
+<li>tvOS 10.0+</li>
+<li>watchOS 3.0+</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+<h4 id='a-href-http-cocoapods-org-cocoapods-a-recommended' class='heading'><a href="http://cocoapods.org">CocoaPods</a> (recommended)</h4>
+<pre class="highlight ruby"><code><span class="n">use_frameworks!</span>
+
+<span class="c1"># Latest release in CocoaPods</span>
+<span class="n">pod</span> <span class="s1">'JSQCoreDataKit'</span>
+
+<span class="c1"># Latest on develop branch</span>
+<span class="n">pod</span> <span class="s1">'JSQCoreDataKit'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/jessesquires/JSQCoreDataKit.git'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'develop'</span>
+</code></pre>
+<h4 id='a-href-https-github-com-carthage-carthage-carthage-a' class='heading'><a href="https://github.com/Carthage/Carthage">Carthage</a></h4>
+<pre class="highlight shell"><code>github <span class="s2">"jessesquires/JSQCoreDataKit"</span>
+</code></pre>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>Read the <a href="https://jessesquires.github.io/JSQCoreDataKit">docs</a>. Generated with <a href="https://github.com/realm/jazzy">jazzy</a>. Hosted by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+<h4 id='generate' class='heading'>Generate</h4>
+<pre class="highlight shell"><code><span class="gp">$ </span>./build_docs.sh
+</code></pre>
+<h4 id='preview' class='heading'>Preview</h4>
+<pre class="highlight shell"><code><span class="gp">$ </span>open index.html -a Safari
+</code></pre>
+<h2 id='contribute' class='heading'>Contribute</h2>
+
+<p>Please follow these sweet <a href="https://github.com/jessesquires/HowToContribute">contribution guidelines</a>.</p>
+<h2 id='credits' class='heading'>Credits</h2>
+
+<p>Created and maintained by <a href="https://twitter.com/jesse_squires"><strong>@jesse_squires</strong></a>.</p>
+<h2 id='license' class='heading'>License</h2>
+
+<p><code>JSQCoreDataKit</code> is released under an <a href="https://opensource.org/licenses/MIT">MIT License</a>. See <code>LICENSE</code> for details.</p>
+
+<blockquote>
+<p><strong>Copyright &copy; 2015-present Jesse Squires.</strong></p>
+</blockquote>
+
+<p><em>Please provide attribution, it is greatly appreciated.</em></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2017-09-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

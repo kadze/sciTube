@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1021031FB2F8E5004E0684 /* JSQCoreDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1021021FB2F8E5004E0684 /* JSQCoreDataKit.framework */; };
+		5E1021041FB2F8E5004E0684 /* JSQCoreDataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1021021FB2F8E5004E0684 /* JSQCoreDataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E13099F1FA7002D00D420E4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099C1FA7002D00D420E4 /* Alamofire.framework */; };
 		5E1309A01FA7002D00D420E4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099C1FA7002D00D420E4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E1309A11FA7002D00D420E4 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099D1FA7002D00D420E4 /* Moya.framework */; };
@@ -40,6 +42,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5E1309A41FA7002D00D420E4 /* Result.framework in Embed Frameworks */,
+				5E1021041FB2F8E5004E0684 /* JSQCoreDataKit.framework in Embed Frameworks */,
 				5E1309A21FA7002D00D420E4 /* Moya.framework in Embed Frameworks */,
 				5E1309A01FA7002D00D420E4 /* Alamofire.framework in Embed Frameworks */,
 			);
@@ -49,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E1021021FB2F8E5004E0684 /* JSQCoreDataKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQCoreDataKit.framework; path = Carthage/Build/iOS/JSQCoreDataKit.framework; sourceTree = "<group>"; };
 		5E13099C1FA7002D00D420E4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E13099D1FA7002D00D420E4 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		5E13099E1FA7002D00D420E4 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E1309A31FA7002D00D420E4 /* Result.framework in Frameworks */,
+				5E1021031FB2F8E5004E0684 /* JSQCoreDataKit.framework in Frameworks */,
 				5E1309A11FA7002D00D420E4 /* Moya.framework in Frameworks */,
 				5E13099F1FA7002D00D420E4 /* Alamofire.framework in Frameworks */,
 			);
@@ -98,6 +103,7 @@
 		5EA65C061F7D4F4500855140 = {
 			isa = PBXGroup;
 			children = (
+				5E1021021FB2F8E5004E0684 /* JSQCoreDataKit.framework */,
 				5E13099C1FA7002D00D420E4 /* Alamofire.framework */,
 				5E13099D1FA7002D00D420E4 /* Moya.framework */,
 				5E13099E1FA7002D00D420E4 /* Result.framework */,
