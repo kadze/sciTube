@@ -30,7 +30,7 @@ public class CDChannel: NSManagedObject, CoreDataEntityProtocol {
         super.init(entity: entity, insertInto: context)
     }
     
-    convenience init?(managedObjectContext: NSManagedObjectContext) {
+    convenience init(managedObjectContext: NSManagedObjectContext) {
         let entity = CDChannel.entity(context: managedObjectContext)
         self.init(entity: entity, insertInto: managedObjectContext)
     }

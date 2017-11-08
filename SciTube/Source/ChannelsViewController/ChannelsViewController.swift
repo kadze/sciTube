@@ -39,7 +39,7 @@ class ChannelsViewController: UIViewController {
     //MARK: - Actions
     
     @objc func onSaveButton(_ sender: UIBarButtonItem) {
-        CoreDataFetcher.sharedInstance.saveChannelsToDatabase(channels, completion: { (result, error) in
+        Channel.saveChannelsToDatabase(channels, completion: { (result, error) in
             let alert = UIAlertController(title: "SciTube", message: "Saved", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
