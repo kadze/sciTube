@@ -20,7 +20,7 @@ class CoreDataFetcher {
     }
     
     func saveChannelToDatabase(_ channel: Channel, completion: @escaping (_ result: Bool?,  _ error: Error?) -> Void) {
-        let entityDescription = NSEntityDescription.entity(forEntityName: CDChannel.entityName(), in: managetObjectContecst)
+        let entityDescription = NSEntityDescription.entity(forEntityName: CDChannel.entityName, in: managetObjectContecst)
         let aChannel = CDChannel(entity: entityDescription!, insertInto: managetObjectContecst)
         aChannel.title = channel.title
         if let image = channel.thumbnail {
@@ -35,7 +35,7 @@ class CoreDataFetcher {
     }
     
     func saveChannelsToDatabase(_ channels: [Channel], completion: @escaping (_ result: Bool?,  _ error: Error?) -> Void) {
-        let entityDescription = NSEntityDescription.entity(forEntityName: CDChannel.entityName(), in: managetObjectContecst)
+        let entityDescription = NSEntityDescription.entity(forEntityName: CDChannel.entityName, in: managetObjectContecst)
         for channel in channels {
             let aChannel = CDChannel(entity: entityDescription!, insertInto: managetObjectContecst)
             aChannel.title = channel.title

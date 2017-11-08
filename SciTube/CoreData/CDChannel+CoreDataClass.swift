@@ -18,15 +18,14 @@ enum CDChannelAttributes: String {
 }
 
 @objc(CDChannel)
-public class CDChannel: NSManagedObject {
+public class CDChannel: NSManagedObject, CoreDataEntityProtocol {
+    
+    public static var defaultSortDescriptors = [NSSortDescriptor]()
+    
     // MARK: - Class methods
     
-    class func entityName () -> String {
-        return "CDChannel"
-    }
-    
     class func entity(managedObjectContext: NSManagedObjectContext) -> NSEntityDescription? {
-        return NSEntityDescription.entity(forEntityName: self.entityName(), in: managedObjectContext)
+        return NSEntityDescription.entity(forEntityName: self.entityName, in: managedObjectContext)
     }
     
     // MARK: - Life cycle methods
@@ -43,7 +42,7 @@ public class CDChannel: NSManagedObject {
     // MARK: -  get all data for predicate from databace
     static func getAllChannelsForPredicate (predicate: NSPredicate) -> [CDChannel]{
         var result = [Any]()
-        let entityDescription = NSEntityDescription.entity(forEntityName: CDChannel.entityName(), in: CoreDataFetcher.sharedInstance.managetObjectContecst)
+        let entityDescription = NSEntityDescription.entity(forEntityName: CDChannel.entityName, in: CoreDataFetcher.sharedInstance.managetObjectContecst)
         
         let fetchRequest = NSFetchRequest<CDChannel>()
         fetchRequest.predicate = predicate

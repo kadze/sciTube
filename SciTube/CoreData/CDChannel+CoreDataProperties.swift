@@ -10,13 +10,7 @@
 import Foundation
 import CoreData
 
-
 extension CDChannel {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<CDChannel> {
-        return NSFetchRequest<CDChannel>(entityName: CDChannel.entityName())
-    }
-
     @NSManaged public var channelDescription: String?
     @NSManaged public var thumbnail: NSData?
     @NSManaged public var title: String?
