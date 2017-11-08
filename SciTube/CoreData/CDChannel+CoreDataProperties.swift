@@ -14,7 +14,7 @@ import CoreData
 extension CDChannel {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CDChannel> {
-        return NSFetchRequest<CDChannel>(entityName: "CDChannel")
+        return NSFetchRequest<CDChannel>(entityName: CDChannel.entityName())
     }
 
     @NSManaged public var channelDescription: String?

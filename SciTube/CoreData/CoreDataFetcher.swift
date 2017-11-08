@@ -22,7 +22,6 @@ class CoreDataFetcher {
     func saveChannelToDatabase(_ channel: Channel, completion: @escaping (_ result: Bool?,  _ error: Error?) -> Void) {
         let entityDescription = NSEntityDescription.entity(forEntityName: CDChannel.entityName(), in: managetObjectContecst)
         let aChannel = CDChannel(entity: entityDescription!, insertInto: managetObjectContecst)
-//        aChannel.setValue(channel.title, forKey: CDChannelAttributes.title.rawValue)
         aChannel.title = channel.title
         if let image = channel.thumbnail {
             aChannel.thumbnail = UIImagePNGRepresentation(image) as NSData?
@@ -30,7 +29,7 @@ class CoreDataFetcher {
         aChannel.channelDescription = channel.channelDescription
         aChannel.url = channel.url.absoluteString
 
-        CoreDataManager.sharedInstance.saveContext {
+        saveContext(managetObjectContecst, wait: true) { (result) in
             completion(true, nil)
         }
     }
@@ -39,7 +38,6 @@ class CoreDataFetcher {
         let entityDescription = NSEntityDescription.entity(forEntityName: CDChannel.entityName(), in: managetObjectContecst)
         for channel in channels {
             let aChannel = CDChannel(entity: entityDescription!, insertInto: managetObjectContecst)
-            //        aChannel.setValue(channel.title, forKey: CDChannelAttributes.title.rawValue)
             aChannel.title = channel.title
             if let image = channel.thumbnail {
                 aChannel.thumbnail = UIImagePNGRepresentation(image) as NSData?
@@ -48,7 +46,7 @@ class CoreDataFetcher {
             aChannel.url = channel.url.absoluteString
         }
         
-        CoreDataManager.sharedInstance.saveContext {
+        saveContext(managetObjectContecst, wait: true) { (result) in
             completion(true, nil)
         }
     }
@@ -70,20 +68,5 @@ class CoreDataFetcher {
         
         return nil;
     }
-
-    // clear completed tasks archive
-//    func clearCompletedTasks(tasks: [Task], complition: @escaping (_ sucsess: Bool) -> Void) {
-//        for task in tasks {
-//            self.managetObjectContecst.delete(task)
-//        }
-//        do {
-//            try  self.managetObjectContecst.save()
-//            DispatchQueue.main.async {
-//                complition(true)
-//            }
-//        } catch {
-//            complition(false)
-//        }
-//    }
 
 }
