@@ -36,19 +36,19 @@ public class CDChannel: NSManagedObject, CoreDataEntityProtocol {
     }
     
     // MARK: -  get all data for predicate from databace
-    static func getAllChannelsForPredicate (predicate: NSPredicate) -> [CDChannel]{
-        var result = [Any]()
-        let entityDescription = NSEntityDescription.entity(forEntityName: CDChannel.entityName, in: CoreDataFetcher.sharedInstance.managetObjectContecst)
-        
-        let fetchRequest = NSFetchRequest<CDChannel>()
-        fetchRequest.predicate = predicate
-        fetchRequest.entity = entityDescription
+    static func getAllChannelsForPredicate(predicate: NSPredicate?) -> [CDChannel]{
+        var result = [CDChannel]()
+        if let predicate = predicate {
+            fetchRequest.predicate = predicate
+        }
+
         do {
-            try result.append(contentsOf: CoreDataFetcher.sharedInstance.managetObjectContecst.fetch(fetchRequest) as NSArray)
+            let channels = try CoreDataManager.sharedInstance.managedObjectContext.fetch(CDChannel.fetchRequest)
+            result.append(contentsOf: channels)
         } catch let error as NSError {
             print("Culd not fetch \(error), \(error.userInfo)")
         }
         
-        return result as! [CDChannel]
+        return result
     }
 }

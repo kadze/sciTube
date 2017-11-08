@@ -18,6 +18,7 @@
 		5E10211C1FB2FB29004E0684 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1021111FB2FB29004E0684 /* CoreDataModel.swift */; };
 		5E10211D1FB2FB29004E0684 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1021121FB2FB29004E0684 /* Utils.swift */; };
 		5E10211E1FB2FB29004E0684 /* StackResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1021131FB2FB29004E0684 /* StackResult.swift */; };
+		5E1021211FB30F9D004E0684 /* Channel+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1021201FB30F9D004E0684 /* Channel+CoreData.swift */; };
 		5E13099F1FA7002D00D420E4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099C1FA7002D00D420E4 /* Alamofire.framework */; };
 		5E1309A01FA7002D00D420E4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099C1FA7002D00D420E4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E1309A11FA7002D00D420E4 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099D1FA7002D00D420E4 /* Moya.framework */; };
@@ -71,6 +72,7 @@
 		5E1021111FB2FB29004E0684 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		5E1021121FB2FB29004E0684 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5E1021131FB2FB29004E0684 /* StackResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackResult.swift; sourceTree = "<group>"; };
+		5E1021201FB30F9D004E0684 /* Channel+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreData.swift"; sourceTree = "<group>"; };
 		5E13099C1FA7002D00D420E4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E13099D1FA7002D00D420E4 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		5E13099E1FA7002D00D420E4 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				5EA65C191F7D4F4500855140 /* SciTube.xcdatamodeld */,
 				5E7DF8651FA0DE69008293CF /* CDChannel+CoreDataClass.swift */,
 				5E7DF8661FA0DE69008293CF /* CDChannel+CoreDataProperties.swift */,
+				5E1021201FB30F9D004E0684 /* Channel+CoreData.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				5EA65C131F7D4F4500855140 /* AppDelegate.swift in Sources */,
 				5E1021151FB2FB29004E0684 /* CoreDataFunctions.swift in Sources */,
 				5E10211B1FB2FB29004E0684 /* CoreDataStackFactory.swift in Sources */,
+				5E1021211FB30F9D004E0684 /* Channel+CoreData.swift in Sources */,
 				5EA65C1B1F7D4F4500855140 /* SciTube.xcdatamodeld in Sources */,
 				5E7DF8641FA0DBDD008293CF /* CoreDataFetcher.swift in Sources */,
 				5E8ACCE01F987D0800294A41 /* ExampleJSON.swift in Sources */,

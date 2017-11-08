@@ -47,9 +47,7 @@ class ChannelsViewController: UIViewController {
     }
     
     @objc func onReadFromDBButton(_ sender: UIBarButtonItem) {
-        if let channels = CoreDataFetcher.sharedInstance.readAllChannelsFromDatabase() {
-            self.channels = channels
-        }
+        self.channels = Channel.readAllChannelsFromDatabase()
     }
     
     //MARK:- Private
