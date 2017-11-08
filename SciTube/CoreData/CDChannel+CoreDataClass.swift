@@ -20,13 +20,9 @@ enum CDChannelAttributes: String {
 @objc(CDChannel)
 public class CDChannel: NSManagedObject, CoreDataEntityProtocol {
     
+    //MARK: CoreDataEntityProtocol
+    
     public static var defaultSortDescriptors = [NSSortDescriptor]()
-    
-    // MARK: - Class methods
-    
-    class func entity(managedObjectContext: NSManagedObjectContext) -> NSEntityDescription? {
-        return NSEntityDescription.entity(forEntityName: self.entityName, in: managedObjectContext)
-    }
     
     // MARK: - Life cycle methods
     
@@ -35,7 +31,7 @@ public class CDChannel: NSManagedObject, CoreDataEntityProtocol {
     }
     
     convenience init?(managedObjectContext: NSManagedObjectContext) {
-        guard let entity = CDChannel.entity(managedObjectContext: managedObjectContext) else { return nil }
+        let entity = CDChannel.entity(context: managedObjectContext)
         self.init(entity: entity, insertInto: managedObjectContext)
     }
     
