@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E1021031FB2F8E5004E0684 /* JSQCoreDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1021021FB2F8E5004E0684 /* JSQCoreDataKit.framework */; };
-		5E1021041FB2F8E5004E0684 /* JSQCoreDataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1021021FB2F8E5004E0684 /* JSQCoreDataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E1021141FB2FB29004E0684 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1021091FB2FB28004E0684 /* StoreType.swift */; };
+		5E1021151FB2FB29004E0684 /* CoreDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E10210A1FB2FB29004E0684 /* CoreDataFunctions.swift */; };
+		5E1021161FB2FB29004E0684 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E10210B1FB2FB29004E0684 /* Equatable.swift */; };
+		5E1021171FB2FB29004E0684 /* CoreDataEntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E10210C1FB2FB29004E0684 /* CoreDataEntityProtocol.swift */; };
+		5E1021181FB2FB29004E0684 /* Migrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E10210D1FB2FB29004E0684 /* Migrate.swift */; };
+		5E1021191FB2FB29004E0684 /* SaveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E10210E1FB2FB29004E0684 /* SaveResult.swift */; };
+		5E10211A1FB2FB29004E0684 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E10210F1FB2FB29004E0684 /* CoreDataStack.swift */; };
+		5E10211B1FB2FB29004E0684 /* CoreDataStackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1021101FB2FB29004E0684 /* CoreDataStackFactory.swift */; };
+		5E10211C1FB2FB29004E0684 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1021111FB2FB29004E0684 /* CoreDataModel.swift */; };
+		5E10211D1FB2FB29004E0684 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1021121FB2FB29004E0684 /* Utils.swift */; };
+		5E10211E1FB2FB29004E0684 /* StackResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1021131FB2FB29004E0684 /* StackResult.swift */; };
 		5E13099F1FA7002D00D420E4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099C1FA7002D00D420E4 /* Alamofire.framework */; };
 		5E1309A01FA7002D00D420E4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099C1FA7002D00D420E4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E1309A11FA7002D00D420E4 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099D1FA7002D00D420E4 /* Moya.framework */; };
@@ -42,7 +51,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5E1309A41FA7002D00D420E4 /* Result.framework in Embed Frameworks */,
-				5E1021041FB2F8E5004E0684 /* JSQCoreDataKit.framework in Embed Frameworks */,
 				5E1309A21FA7002D00D420E4 /* Moya.framework in Embed Frameworks */,
 				5E1309A01FA7002D00D420E4 /* Alamofire.framework in Embed Frameworks */,
 			);
@@ -52,7 +60,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5E1021021FB2F8E5004E0684 /* JSQCoreDataKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQCoreDataKit.framework; path = Carthage/Build/iOS/JSQCoreDataKit.framework; sourceTree = "<group>"; };
+		5E1021091FB2FB28004E0684 /* StoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreType.swift; sourceTree = "<group>"; };
+		5E10210A1FB2FB29004E0684 /* CoreDataFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataFunctions.swift; sourceTree = "<group>"; };
+		5E10210B1FB2FB29004E0684 /* Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equatable.swift; sourceTree = "<group>"; };
+		5E10210C1FB2FB29004E0684 /* CoreDataEntityProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataEntityProtocol.swift; sourceTree = "<group>"; };
+		5E10210D1FB2FB29004E0684 /* Migrate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Migrate.swift; sourceTree = "<group>"; };
+		5E10210E1FB2FB29004E0684 /* SaveResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveResult.swift; sourceTree = "<group>"; };
+		5E10210F1FB2FB29004E0684 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		5E1021101FB2FB29004E0684 /* CoreDataStackFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackFactory.swift; sourceTree = "<group>"; };
+		5E1021111FB2FB29004E0684 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		5E1021121FB2FB29004E0684 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5E1021131FB2FB29004E0684 /* StackResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackResult.swift; sourceTree = "<group>"; };
 		5E13099C1FA7002D00D420E4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E13099D1FA7002D00D420E4 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		5E13099E1FA7002D00D420E4 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -83,7 +101,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E1309A31FA7002D00D420E4 /* Result.framework in Frameworks */,
-				5E1021031FB2F8E5004E0684 /* JSQCoreDataKit.framework in Frameworks */,
 				5E1309A11FA7002D00D420E4 /* Moya.framework in Frameworks */,
 				5E13099F1FA7002D00D420E4 /* Alamofire.framework in Frameworks */,
 			);
@@ -92,6 +109,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E1021081FB2FAD7004E0684 /* JSQCoreDataKit */ = {
+			isa = PBXGroup;
+			children = (
+				5E10210C1FB2FB29004E0684 /* CoreDataEntityProtocol.swift */,
+				5E10210A1FB2FB29004E0684 /* CoreDataFunctions.swift */,
+				5E1021111FB2FB29004E0684 /* CoreDataModel.swift */,
+				5E10210F1FB2FB29004E0684 /* CoreDataStack.swift */,
+				5E1021101FB2FB29004E0684 /* CoreDataStackFactory.swift */,
+				5E10210B1FB2FB29004E0684 /* Equatable.swift */,
+				5E10210D1FB2FB29004E0684 /* Migrate.swift */,
+				5E10210E1FB2FB29004E0684 /* SaveResult.swift */,
+				5E1021131FB2FB29004E0684 /* StackResult.swift */,
+				5E1021091FB2FB28004E0684 /* StoreType.swift */,
+				5E1021121FB2FB29004E0684 /* Utils.swift */,
+			);
+			path = JSQCoreDataKit;
+			sourceTree = "<group>";
+		};
 		5E8B86CF1F7D5CA3007C3C7F /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +138,6 @@
 		5EA65C061F7D4F4500855140 = {
 			isa = PBXGroup;
 			children = (
-				5E1021021FB2F8E5004E0684 /* JSQCoreDataKit.framework */,
 				5E13099C1FA7002D00D420E4 /* Alamofire.framework */,
 				5E13099D1FA7002D00D420E4 /* Moya.framework */,
 				5E13099E1FA7002D00D420E4 /* Result.framework */,
@@ -195,6 +229,7 @@
 		5EBAB4541F7D778A00061D2C /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				5E1021081FB2FAD7004E0684 /* JSQCoreDataKit */,
 				5ED3F1E71F7D7CE2009BFF00 /* EasyAccess.swift */,
 				5EBAB4551F7D77B100061D2C /* TableDataSource.swift */,
 			);
@@ -275,18 +310,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E10211C1FB2FB29004E0684 /* CoreDataModel.swift in Sources */,
+				5E10211E1FB2FB29004E0684 /* StackResult.swift in Sources */,
 				5ED3F1E21F7D7AF5009BFF00 /* TableDataSource.swift in Sources */,
 				5EA65C2D1F7D50DB00855140 /* ChannelsViewController.swift in Sources */,
 				5EBAB4511F7D765200061D2C /* ChannelCell.swift in Sources */,
+				5E1021181FB2FB29004E0684 /* Migrate.swift in Sources */,
 				5E8B86CE1F7D5B6D007C3C7F /* Channel.swift in Sources */,
+				5E1021171FB2FB29004E0684 /* CoreDataEntityProtocol.swift in Sources */,
 				5E7DF8671FA0DE69008293CF /* CDChannel+CoreDataClass.swift in Sources */,
 				5EA65C131F7D4F4500855140 /* AppDelegate.swift in Sources */,
+				5E1021151FB2FB29004E0684 /* CoreDataFunctions.swift in Sources */,
+				5E10211B1FB2FB29004E0684 /* CoreDataStackFactory.swift in Sources */,
 				5EA65C1B1F7D4F4500855140 /* SciTube.xcdatamodeld in Sources */,
 				5E7DF8641FA0DBDD008293CF /* CoreDataFetcher.swift in Sources */,
 				5E8ACCE01F987D0800294A41 /* ExampleJSON.swift in Sources */,
 				5E8B86D11F7D5D0C007C3C7F /* NorbsoftAPI.swift in Sources */,
+				5E10211D1FB2FB29004E0684 /* Utils.swift in Sources */,
 				5E7DF8681FA0DE69008293CF /* CDChannel+CoreDataProperties.swift in Sources */,
+				5E1021141FB2FB29004E0684 /* StoreType.swift in Sources */,
+				5E10211A1FB2FB29004E0684 /* CoreDataStack.swift in Sources */,
+				5E1021191FB2FB29004E0684 /* SaveResult.swift in Sources */,
 				5E7DF8621FA0DAF8008293CF /* CoreDataManager.swift in Sources */,
+				5E1021161FB2FB29004E0684 /* Equatable.swift in Sources */,
 				5ED3F1E81F7D7CE2009BFF00 /* EasyAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,7 +461,6 @@
 		5EA65C251F7D4F4500855140 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82RN25AVX5;
@@ -435,7 +480,6 @@
 		5EA65C261F7D4F4500855140 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82RN25AVX5;
