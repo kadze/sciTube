@@ -16,7 +16,7 @@ class CoreDataFetcher {
     
     var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
     init() {
-        managedObjectContext = CoreDataManager.sharedInstance.managedObjectContext
+        managedObjectContext = CoreDataManager.sharedInstance.mainContext
     }
     
     

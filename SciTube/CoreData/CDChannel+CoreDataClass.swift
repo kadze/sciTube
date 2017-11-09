@@ -43,7 +43,7 @@ public class CDChannel: NSManagedObject, CoreDataEntityProtocol {
         }
 
         do {
-            let channels = try CoreDataManager.sharedInstance.managedObjectContext.fetch(CDChannel.fetchRequest)
+            let channels = try CoreDataManager.sharedInstance.mainContext.fetch(CDChannel.fetchRequest)
             result.append(contentsOf: channels)
         } catch let error as NSError {
             print("Culd not fetch \(error), \(error.userInfo)")

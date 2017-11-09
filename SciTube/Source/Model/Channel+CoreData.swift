@@ -27,7 +27,7 @@ extension Channel {
     //MARK: - Write
     
     static func saveChannelsToDatabase(_ channels: [Channel], completion: @escaping (_ result: Bool?,  _ error: Error?) -> Void) {
-        let moc = CoreDataManager.sharedInstance.managedObjectContext
+        let moc = CoreDataManager.sharedInstance.mainContext
         channels.forEach {
             CDChannel(managedObjectContext: moc).fillWith(channel: $0)
         }
@@ -38,7 +38,7 @@ extension Channel {
     }
     
     func saveToDatabase(completion: @escaping (_ result: Bool?,  _ error: Error?) -> Void) {
-        let moc = CoreDataManager.sharedInstance.managedObjectContext
+        let moc = CoreDataManager.sharedInstance.mainContext
         CDChannel(managedObjectContext: moc).fillWith(channel: self)
 
         saveContext(moc, wait: true) { (result) in

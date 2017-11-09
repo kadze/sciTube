@@ -26,7 +26,9 @@
 		5E1309A21FA7002D00D420E4 /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099D1FA7002D00D420E4 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E1309A31FA7002D00D420E4 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099E1FA7002D00D420E4 /* Result.framework */; };
 		5E1309A41FA7002D00D420E4 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E13099E1FA7002D00D420E4 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5E7DF8621FA0DAF8008293CF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DF8611FA0DAF8008293CF /* CoreDataManager.swift */; };
+		5E734B6D1FB43DF200F5B49F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E734B6C1FB43DF200F5B49F /* CoreDataManager.swift */; };
+		5E734B7F1FB4484D00F5B49F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E734B7E1FB4484D00F5B49F /* Model.swift */; };
+		5E7DF8621FA0DAF8008293CF /* CoreDataManagerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DF8611FA0DAF8008293CF /* CoreDataManagerOld.swift */; };
 		5E7DF8641FA0DBDD008293CF /* CoreDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DF8631FA0DBDD008293CF /* CoreDataFetcher.swift */; };
 		5E7DF8671FA0DE69008293CF /* CDChannel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DF8651FA0DE69008293CF /* CDChannel+CoreDataClass.swift */; };
 		5E7DF8681FA0DE69008293CF /* CDChannel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DF8661FA0DE69008293CF /* CDChannel+CoreDataProperties.swift */; };
@@ -78,7 +80,9 @@
 		5E13099C1FA7002D00D420E4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E13099D1FA7002D00D420E4 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		5E13099E1FA7002D00D420E4 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		5E7DF8611FA0DAF8008293CF /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		5E734B6C1FB43DF200F5B49F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		5E734B7E1FB4484D00F5B49F /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5E7DF8611FA0DAF8008293CF /* CoreDataManagerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManagerOld.swift; sourceTree = "<group>"; };
 		5E7DF8631FA0DBDD008293CF /* CoreDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataFetcher.swift; sourceTree = "<group>"; };
 		5E7DF8651FA0DE69008293CF /* CDChannel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDChannel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5E7DF8661FA0DE69008293CF /* CDChannel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDChannel+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -195,7 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				5E7DF8631FA0DBDD008293CF /* CoreDataFetcher.swift */,
-				5E7DF8611FA0DAF8008293CF /* CoreDataManager.swift */,
+				5E7DF8611FA0DAF8008293CF /* CoreDataManagerOld.swift */,
+				5E734B6C1FB43DF200F5B49F /* CoreDataManager.swift */,
+				5E734B7E1FB4484D00F5B49F /* Model.swift */,
 				5EA65C191F7D4F4500855140 /* SciTube.xcdatamodeld */,
 				5E7DF8651FA0DE69008293CF /* CDChannel+CoreDataClass.swift */,
 				5E7DF8661FA0DE69008293CF /* CDChannel+CoreDataProperties.swift */,
@@ -323,6 +329,7 @@
 				5EBAB4511F7D765200061D2C /* ChannelCell.swift in Sources */,
 				5E1021181FB2FB29004E0684 /* Migrate.swift in Sources */,
 				5E8B86CE1F7D5B6D007C3C7F /* Channel.swift in Sources */,
+				5E734B7F1FB4484D00F5B49F /* Model.swift in Sources */,
 				5E1021171FB2FB29004E0684 /* CoreDataEntityProtocol.swift in Sources */,
 				5E7DF8671FA0DE69008293CF /* CDChannel+CoreDataClass.swift in Sources */,
 				5EA65C131F7D4F4500855140 /* AppDelegate.swift in Sources */,
@@ -338,8 +345,9 @@
 				5E7DF8681FA0DE69008293CF /* CDChannel+CoreDataProperties.swift in Sources */,
 				5E1021141FB2FB29004E0684 /* StoreType.swift in Sources */,
 				5E10211A1FB2FB29004E0684 /* CoreDataStack.swift in Sources */,
+				5E734B6D1FB43DF200F5B49F /* CoreDataManager.swift in Sources */,
 				5E1021191FB2FB29004E0684 /* SaveResult.swift in Sources */,
-				5E7DF8621FA0DAF8008293CF /* CoreDataManager.swift in Sources */,
+				5E7DF8621FA0DAF8008293CF /* CoreDataManagerOld.swift in Sources */,
 				5E1021161FB2FB29004E0684 /* Equatable.swift in Sources */,
 				5ED3F1E81F7D7CE2009BFF00 /* EasyAccess.swift in Sources */,
 			);
