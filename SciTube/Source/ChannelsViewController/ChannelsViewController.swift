@@ -28,8 +28,7 @@ class ChannelsViewController: UIViewController {
         super.viewDidLoad()
         title = Constants.title
         setupTableView()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(ChannelsViewController.onSaveButton(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "read from db", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ChannelsViewController.onReadFromDBButton(_:)))
+        setupNavigationItem()
         Channel.channelsFromAPI(with: {[weak self] channels in
             self?.channels = channels
             self?.updateTableView()
@@ -56,6 +55,26 @@ class ChannelsViewController: UIViewController {
         })
     }
     
+    @objc func onTrashButton(_ sender: UIBarButtonItem) {
+        Channel.removeAllChannelsFromDatabase(completion: { (result) in
+            DispatchQueue.main.async {
+                var message: String
+                switch result {
+                case .success:
+                    message = "Removed successfully"
+                    self.channels.removeAll()
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    message = "Failed to remove with error: \(error.localizedDescription)"
+                }
+                
+                let alert = UIAlertController(title: "SciTube", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
+    }
+    
     @objc func onReadFromDBButton(_ sender: UIBarButtonItem) {
         self.channels = Channel.readAllChannelsFromDatabase()
     }
@@ -66,6 +85,13 @@ class ChannelsViewController: UIViewController {
         tableView?.register(ChannelCell.nib, forCellReuseIdentifier: ChannelCell.nibName)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
+    }
+    
+    private func setupNavigationItem() {
+        let trashButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.trash, target: self, action: #selector(ChannelsViewController.onTrashButton(_:)))
+        let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(ChannelsViewController.onSaveButton(_:)))
+        navigationItem.rightBarButtonItems = [trashButton, saveButton]
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "read from db", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ChannelsViewController.onReadFromDBButton(_:)))
     }
     
     private func updateTableView() {

@@ -47,5 +47,23 @@ extension Channel {
             completion(true, nil)
         }
     }
+    
+    static func removeAllChannelsFromDatabase(completion: @escaping (_ result: SaveResult) -> Void) {
+        let backgroundChildContext = CoreDataManager.sharedInstance.stack.childContext(concurrencyType: .privateQueueConcurrencyType)
+        backgroundChildContext.performAndWait {
+            do {
+                let objects = try backgroundChildContext.fetch(CDChannel.fetchRequest)
+                for each in objects {
+                    backgroundChildContext.delete(each)
+                }
+                
+                saveContext(backgroundChildContext, wait: true) { (result) in
+                    completion(result);
+                }
+            } catch {
+                print("Error deleting objects: \(error)")
+            }
+        }
+    }
 
 }
