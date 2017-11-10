@@ -26,14 +26,16 @@ extension Channel {
     
     //MARK: - Write
     
-    static func saveChannelsToDatabase(_ channels: [Channel], completion: @escaping (_ result: Bool?,  _ error: Error?) -> Void) {
-        let moc = CoreDataManager.sharedInstance.mainContext
-        channels.forEach {
-            CDChannel(managedObjectContext: moc).fillWith(channel: $0)
-        }
-        
-        saveContext(moc, wait: true) { (result) in
-            completion(true, nil)
+    static func saveChannelsToDatabase(_ channels: [Channel], completion: @escaping (_ result: SaveResult) -> Void) {
+        let backgroundContext = CoreDataManager.sharedInstance.backgroundContext
+        backgroundContext.performAndWait {
+            channels.forEach {
+                CDChannel(managedObjectContext: backgroundContext).fillWith(channel: $0)
+            }
+            
+            saveContext(backgroundContext) { (result) in
+                completion(result);
+            }
         }
     }
     

@@ -39,10 +39,20 @@ class ChannelsViewController: UIViewController {
     //MARK: - Actions
     
     @objc func onSaveButton(_ sender: UIBarButtonItem) {
-        Channel.saveChannelsToDatabase(channels, completion: { (result, error) in
-            let alert = UIAlertController(title: "SciTube", message: "Saved", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        Channel.saveChannelsToDatabase(channels, completion: { (result) in
+            DispatchQueue.main.async {
+                var message: String
+                switch result {
+                case .success:
+                    message = "Saved"
+                case .failure(let error):
+                    message = "Saving failed with error: \(error.localizedDescription)"
+                }
+                
+                let alert = UIAlertController(title: "SciTube", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         })
     }
     

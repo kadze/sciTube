@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        _ = CoreDataManager.sharedInstance //Core Data stack bacground initialization
+        _ = CoreDataManager.sharedInstance //Core Data stack background initialization
         
         return true
     }
